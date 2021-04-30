@@ -8,6 +8,7 @@ import scenario.page.AccountsPage;
 import scenario.page.MainPage;
 
 import java.util.Arrays;
+import static key.Keys.*;
 
 public class AccountsTest extends BaseTest {
 
@@ -26,7 +27,7 @@ public class AccountsTest extends BaseTest {
     @Test(description = "Check all crypto kind exist")
     public void checkCryptoTest() {
 
-        Arrays.asList("BTC Account", "ETH Account", "LTC Account", "XRP Account", "BHD Account", "USD Account"
+        Arrays.asList(BTC_ACCOUNT, ETH_ACCOUNT, LTC_ACCOUNT, XRP_ACCOUNT, BHD_ACCOUNT, USD_ACCOUNT
         ).forEach(crypto -> Assert.assertTrue(accountsPage.isCryptoExist(crypto)));
     }
 }

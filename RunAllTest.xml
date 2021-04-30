@@ -6,7 +6,7 @@
         <listener class-name="listener.TestListener"/>
     </listeners>
     <suite-files>
-<!--        <suite-file path="SignUp.xml"/>-->
+        <suite-file path="SignUp.xml"/>
         <suite-file path="BuyCrypto.xml"/>
         <suite-file path="SellCrypto.xml"/>
         <suite-file path="Accounts.xml"/>

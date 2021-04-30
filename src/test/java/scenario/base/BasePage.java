@@ -76,7 +76,6 @@ public class BasePage {
         try {
 
             waitUntilElementAppears(by);
-            System.out.println(findElements(by).size());
             return findElements(by).size() == 1;
         } catch (TimeoutException e) {
 

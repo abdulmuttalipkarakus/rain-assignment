@@ -38,6 +38,6 @@ public class BaseTest extends DriverFactory {
     @AfterSuite(alwaysRun = true)
     public void tearDown(ITestContext context) {
 
-//        getDriver().quit();
+        getDriver().quit();
     }
 }
