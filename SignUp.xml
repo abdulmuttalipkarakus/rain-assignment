@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SignUp Test Suite">
+    <listeners>
+        <listener class-name="listener.TestListener"/>
+    </listeners>
+    <test name="SignUpTest Test">
+        <classes>
+            <class name="scenario.test.SignUpInTest">
+                <methods>
+                    <include name="signUpTest"/>
+                </methods>
+            </class>
+            <class name="scenario.test.UserProfileTest">
+                <methods>
+                    <include name="signOutTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
