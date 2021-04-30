@@ -8,6 +8,7 @@ public class Configuration {
     private static final Configuration instance = new Configuration();
 
     private String rainBaseUrl;
+    private String rainSignUpBaseUrl;
     private String rainUserFirstName;
     private String rainUserLastName;
     private String rainUserEmail;
@@ -32,6 +33,7 @@ public class Configuration {
             configProps.load(is);
 
             this.rainBaseUrl = configProps.getProperty("rain.base.url");
+            this.rainSignUpBaseUrl = configProps.getProperty("rain.signUp.base.url");
             this.rainUserFirstName = configProps.getProperty("rain.user.firstName");
             this.rainUserLastName = configProps.getProperty("rain.user.lastName");
             this.rainUserEmail = configProps.getProperty("rain.user.email");
@@ -50,6 +52,7 @@ public class Configuration {
     }
 
     public String getRainBaseUrl() { return rainBaseUrl; }
+    public String getRainSignUpBaseUrl() { return rainSignUpBaseUrl; }
     public String getRainUserFirstName() { return rainUserFirstName; }
     public String getRainUserLastName() { return rainUserLastName; }
     public String getRainUserEmail() { return rainUserEmail; }

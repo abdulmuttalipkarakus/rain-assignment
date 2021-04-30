@@ -24,7 +24,7 @@ There are a few things needed before you run the tests. Make sure you have the l
 
 1. Run specific TestNG.xml file with `mvn clean test -Dbrowser=<browserName> -Dsurefire.suiteXmlFiles=<testNGFile>`
    
-   Example for first study case:  `mvn clean test -DbrowserType=chrome -Dsurefire.suiteXmlFiles=RunAllTest.xml`
+   Example:  `mvn clean test -DbrowserType=chrome -Dsurefire.suiteXmlFiles=RunAllTest.xml`
    
 #### Note
 - You can view html test results on the `/target/surefire-reports/emailable-report.html` path after running

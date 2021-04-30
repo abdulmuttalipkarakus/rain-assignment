@@ -6,7 +6,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BasePage {
@@ -65,13 +64,6 @@ public class BasePage {
         element.clear();
     }
 
-    protected String getTextOfElement(By by, int... index) {
-
-        return index.length == 0
-                ? findElement(by).getText()
-                : findElement(by, index[0]).getText();
-    }
-
     protected void waitUntilElementAppears(By by) { wait.until(ExpectedConditions.visibilityOfElementLocated(by)); }
 
     protected void waitUntilElementClickable(By by) {
@@ -99,15 +91,6 @@ public class BasePage {
                 "color: red; border: 1px dashed red;");
     }
 
-    protected void switchTab(int tabIndex) {
-
-        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(tabIndex));
-    }
-
-    /**
-     * Hover on an element
-     */
     protected void hoverElement(By by) {
 
         WebElement element = findElement(by);

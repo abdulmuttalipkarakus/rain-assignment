@@ -5,7 +5,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import scenario.base.BaseTest;
 import scenario.page.AccountsPage;
-import scenario.page.BuyCryptoPage;
 import scenario.page.MainPage;
 
 import java.util.Arrays;

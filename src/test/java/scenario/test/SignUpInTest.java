@@ -8,7 +8,6 @@ import scenario.page.SignUpInPage;
 import scenario.page.MainPage;
 
 import javax.mail.Message;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -49,15 +48,12 @@ public class SignUpInTest extends BaseTest {
 
         Message[] messages = javaMailApi.getInboxMessages(USER_EMAIL, USER_APP_PASSWORD);
         boolean isMessageExist = false;
-        System.out.println(Arrays.toString(messages));
 
         for (Message message : messages) {
 
             if (SUBJECT.equalsIgnoreCase(message.getSubject()) && message.getSentDate().after(nowTime)) {
 
                 List text = javaMailApi.getTextFromMessage(message);
-                System.out.println("mail links -> " + text);
-                System.out.println("verification link -> " + text.get(0).toString());
                 emailVerificationLink = text.get(0).toString();
                 Assert.assertEquals((message.getFrom()[0]).toString(), FROM);
 
@@ -75,7 +71,6 @@ public class SignUpInTest extends BaseTest {
 
         mainPage.waitUntilGivenTime(3);
         String mobileVerificationCode = readMessage.getSMS().split(": ")[1];
-        System.out.println(mobileVerificationCode);
 
         signUpPage.typeMobileVerCode(mobileVerificationCode)
                 .clickContinueButton()

@@ -7,7 +7,6 @@ import scenario.base.BasePage;
 public class BuyCryptoPage extends BasePage {
 
     private static final By BUY_FIAT_AMOUNT_INPUT = By.id("buy_fiat_amount");
-    private static final By SELL_FIAT_AMOUNT_INPUT = By.id("sell_fiat_amount");
     private static final By CONTINUE_BUTTON = By.cssSelector("[value='Continue']");
     private static final By CONFIRM_BUTTON = By.cssSelector("[value='Confirm']");
     private static final By SUBMIT_BUTTON = By.cssSelector("[value='Submit']");
@@ -21,12 +20,6 @@ public class BuyCryptoPage extends BasePage {
     public BuyCryptoPage typeBuyAmount(String amount) {
 
         fillInputField(BUY_FIAT_AMOUNT_INPUT, amount, false);
-        return this;
-    }
-
-    public BuyCryptoPage typeSellAmount(String amount) {
-
-        fillInputField(SELL_FIAT_AMOUNT_INPUT, amount, false);
         return this;
     }
 

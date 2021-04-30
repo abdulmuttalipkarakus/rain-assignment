@@ -12,7 +12,6 @@ public class SignUpInPage extends BasePage {
     private static final By SIGN_UP_PASSWORD_INPUT = By.id("password");
     private static final By SUBMIT_BUTTON = By.cssSelector("[type='submit']");
     private static final By COUNTRY_LIST = By.cssSelector("[aria-autocomplete='list']");
-    private static final By COUNTRY_LIST_BOX = By.cssSelector("[role='listbox']");
     private static final By PHONE_NUMBER_INPUT = By.id("phone-number");
     private static final By MOBILE_VER_CODE_INPUT = By.id("verification-code");
     private static final By CONTINUE_BUTTON = By.xpath("//*[text()='Continue']");

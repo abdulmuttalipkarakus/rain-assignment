@@ -2,7 +2,6 @@ package scenario.base;
 
 import api.JavaMailApi;
 import api.ReadMessage;
-import com.google.gson.Gson;
 import factory.DriverFactory;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.ITestContext;
@@ -15,7 +14,6 @@ import java.util.logging.Logger;
 public class BaseTest extends DriverFactory {
 
     protected static final Configuration config = Configuration.getInstance();
-    protected static final Gson gson = new Gson();
     protected static Logger logger = Logger.getLogger(BaseTest.class.getName());
     protected static JavaMailApi javaMailApi = JavaMailApi.getInstance();
     protected static ReadMessage readMessage = ReadMessage.getInstance();
@@ -32,11 +30,9 @@ public class BaseTest extends DriverFactory {
 
         System.out.println("rainEmail-> " + rainEmail);
         createDriver();
-//        getDriver().get(config.getRainBaseUrl());
 
-       getDriver().get("https://rain-react-staging-0.rain.bh/en");
-
-
+        if (suiteName.equalsIgnoreCase("SignUp Test Suite")) getDriver().get(config.getRainSignUpBaseUrl());
+        else   getDriver().get(config.getRainBaseUrl());
     }
 
     @AfterSuite(alwaysRun = true)
