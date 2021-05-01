@@ -12,11 +12,6 @@
                     <include name="signUpTest"/>
                 </methods>
             </class>
-            <class name="scenario.test.UserProfileTest">
-                <methods>
-                    <include name="signOutTest"/>
-                </methods>
-            </class>
         </classes>
     </test>
 </suite>

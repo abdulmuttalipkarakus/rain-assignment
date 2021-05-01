@@ -76,16 +76,17 @@ public class SignUpInTest extends BaseTest {
                 .clickContinueButton()
                 .selectResidency(BAHRAIN)
                 .selectNationality(BAHRAIN)
-                .clickContinueButton()
                 .clickContinueButton();
 
-        for (int i = 0; i < 15; i++) {
+        mainPage.waitUntilGivenTime(5);
+        if (!mainPage.isUserProfileExist()) {
 
-            if (signUpPage.isProvideLaterButtonExist()) {
-
-                signUpPage.clickProvideLaterButton()
-                        .clickProvideLaterButton();
-            } else break;
+            signUpPage.clickContinueButton();
+            for (int i = 0; i < 15; i++) {
+                if (signUpPage.isProvideLaterButtonExist()) {
+                    signUpPage.clickProvideLaterButton();
+                } else break;
+            }
         }
 
         Assert.assertTrue(mainPage.isUserProfileExist());
